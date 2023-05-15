@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookmarksComponent } from './bookmarks/bookmarks.component';
+import { TodosComponent } from './todos/todos.component';
+import { NotesComponent } from './notes/notes.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'bookmarks', component: BookmarksComponent, data: { tab: 1 } },
+  { path: 'todos', component: TodosComponent, data: { tab: 2 } },
+  { path: 'notes', component: NotesComponent, data: { tab: 3 } },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
